@@ -8,20 +8,11 @@ public class LevelManager : MonoBehaviour
     [SerializeField] string levelName;
     [SerializeField] int levelNumber;
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("Gracz wszed³ w collider");
-        if(collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Gracz wszedl do levelu " + levelName);
-            SceneManager.LoadScene(levelNumber);
+    public GameObject Gate;
 
-        }
-        
-    }
     private void OnTriggerEnter(Collider other)
     {
-                Debug.Log("Gracz wszed³ w collider");
+        Debug.Log("Gracz wszed³ w collider");
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("Gracz wszedl do levelu " + levelName);
