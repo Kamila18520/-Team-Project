@@ -11,10 +11,15 @@ public class CoinCollection : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if(other.CompareTag("Coin"))
+        {
         Coin++;
         
         Debug.Log(Coin);
         Destroy(other.gameObject);
+
+        }
+
     }
 
 
