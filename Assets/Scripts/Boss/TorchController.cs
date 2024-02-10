@@ -21,6 +21,31 @@ public class TorchController : MonoBehaviour
         LetterE.SetActive(false);
     }
 
+     void Update()
+    {
+
+        if (isFireOn)
+        {
+            LetterE.SetActive(false);
+        }
+        else
+        {
+            LetterE.SetActive(isPlayerInZone);
+        }
+
+
+
+        if (isPlayerInZone && !isFireOn && Keyboard.current.eKey.wasReleasedThisFrame) 
+        {
+            Debug.Log("Player pressed E key");
+            isFireOn = true;
+            Light.SetActive(true);
+            FireEffect.SetActive(true);
+        }
+
+
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -28,21 +53,23 @@ public class TorchController : MonoBehaviour
             Debug.Log("BOSS LEVEL: Player entered into torch trigger ");
             isPlayerInZone = true;
 
-            LetterE.SetActive(true);
-            //Update(other.transform.rotation);
             LetterE.transform.LookAt(other.transform.position);
 
-            if(Keyboard.current.eKey.wasPressedThisFrame && !isFireOn)
-            {
-                Debug.Log("Player pressed E key");
-                isFireOn= true;
-                Light.SetActive(true);
-                FireEffect.SetActive(true);
-            }
+
         }
-        else
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+
+        if (other.CompareTag("Player"))
         {
-            isPlayerInZone= false;
+            Debug.Log("BOSS LEVEL: Player exit  into torch trigger ");
+            isPlayerInZone = false;
         }
+
+
+
     }
 }

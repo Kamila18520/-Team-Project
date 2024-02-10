@@ -9,25 +9,39 @@ public class SawbladeController : MonoBehaviour
     [SerializeField] GameObject Point;
 
     [SerializeField] float TimeToStart;
+    [SerializeField] float TimeToFullRotateBlade;
     [SerializeField] float Speed;
+    [SerializeField] bool SameShowHideSpeed=false;
+    [SerializeField] float TimeThatBladeIsShown;
+    [SerializeField] float TimeThatBladeIsHide;
+    [SerializeField] bool Showing = true;
 
-    private bool isMoving = false;
-    private float startTime;
+
+    private float TimeBetweenShowHideBlade;
 
     // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
-        startTime = Time.time + TimeToStart;
+        if (SameShowHideSpeed)
+        {
+            SetTimeBetweenShowHideBlade();
+        }
+
+        MoveBlade();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.time >= startTime && !isMoving)
+        if(TimeToFullRotateBlade !=0)
         {
-            isMoving = true;
-            MoveBlade();
+        float rotationAmount = TimeToFullRotateBlade * 360f * Time.deltaTime;
+        Blade.transform.transform.eulerAngles = new Vector3(90, Blade.transform.eulerAngles.y + rotationAmount, 0f);
+
         }
+
+ 
     }
 
     void MoveBlade()
@@ -37,27 +51,40 @@ public class SawbladeController : MonoBehaviour
 
     IEnumerator MoveObject(Transform obj, Vector3 startPos, Vector3 endPos, float timeToMove)
     {
+        
+        Showing = !Showing;
         float t = 0f;
 
-        while (t < 1)
+        while (t < Speed)
         {
             t += Time.deltaTime / timeToMove;
             obj.position = Vector3.Lerp(startPos, endPos, t * t); // Interpolacja kwadratowa.
 
-            // Obrót tylko wokó³ osi Y w zale¿noœci od prêdkoœci.
-            float rotationAmount = Speed * 360f * Time.deltaTime;
-            obj.Rotate(Vector3.up, rotationAmount);
-
             yield return null;
         }
 
-        // Optional: You can perform additional actions after reaching the destination.
-
         // Wait for a short delay at the destination.
-        yield return new WaitForSeconds(1.0f);
+
+        
+
+        var SetTime = Showing ? TimeBetweenShowHideBlade = TimeThatBladeIsShown : TimeBetweenShowHideBlade = TimeThatBladeIsHide;
+
+        if(SameShowHideSpeed)
+        {
+            SetTimeBetweenShowHideBlade();
+        }
+        yield return new WaitForSeconds(TimeBetweenShowHideBlade);
 
         // Start moving back.
         StartCoroutine(MoveObject(obj, endPos, startPos, timeToMove));
     }
+
+    private void SetTimeBetweenShowHideBlade()
+    {
+        TimeBetweenShowHideBlade = TimeThatBladeIsShown;
+
+    }
+
+
 }
 
