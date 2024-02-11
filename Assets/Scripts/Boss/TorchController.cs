@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 
 public class TorchController : MonoBehaviour
 {
+    [SerializeField] GameObject AnimationDirector;
     public bool isPlayerInZone;
     public bool isFireOn = false;
     [SerializeField] GameObject FireEffect;
@@ -41,6 +42,7 @@ public class TorchController : MonoBehaviour
             isFireOn = true;
             Light.SetActive(true);
             FireEffect.SetActive(true);
+            AnimationDirector.SetActive(true);
         }
 
 
