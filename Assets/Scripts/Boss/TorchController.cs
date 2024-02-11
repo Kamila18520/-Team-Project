@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 
 public class TorchController : MonoBehaviour
 {
+
     [SerializeField] GameObject AnimationDirector;
     public bool isPlayerInZone;
     public bool isFireOn = false;
@@ -14,6 +15,8 @@ public class TorchController : MonoBehaviour
     [SerializeField] GameObject Light;
 
     [SerializeField] GameObject LetterE;
+
+    [SerializeField] Rigidbody Chain;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +46,7 @@ public class TorchController : MonoBehaviour
             Light.SetActive(true);
             FireEffect.SetActive(true);
             AnimationDirector.SetActive(true);
+            Chain.isKinematic = false;
         }
 
 
