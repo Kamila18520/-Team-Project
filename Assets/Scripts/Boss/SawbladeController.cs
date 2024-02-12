@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SawbladeController : MonoBehaviour
 {
+  
+
     [SerializeField] GameObject Blade;
     [SerializeField] GameObject Center;
     [SerializeField] GameObject Point;
@@ -46,7 +48,10 @@ public class SawbladeController : MonoBehaviour
 
     void MoveBlade()
     {
-        StartCoroutine(MoveObject(Blade.transform, Center.transform.position, Point.transform.position, TimeToStart));
+ 
+                StartCoroutine(MoveObject(Blade.transform, Center.transform.position, Point.transform.position, TimeToStart));
+
+       
     }
 
     IEnumerator MoveObject(Transform obj, Vector3 startPos, Vector3 endPos, float timeToMove)

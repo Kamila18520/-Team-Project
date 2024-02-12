@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 
 public class TorchController : MonoBehaviour
 {
-
+    [SerializeField] BossTrapController TrapController;
     [SerializeField] GameObject AnimationDirector;
     public bool isPlayerInZone;
     public bool isFireOn = false;
@@ -42,6 +42,7 @@ public class TorchController : MonoBehaviour
         if (isPlayerInZone && !isFireOn && Keyboard.current.eKey.wasReleasedThisFrame) 
         {
             Debug.Log("Player pressed E key");
+            TrapController.FinishLevel();
             isFireOn = true;
             Light.SetActive(true);
             FireEffect.SetActive(true);

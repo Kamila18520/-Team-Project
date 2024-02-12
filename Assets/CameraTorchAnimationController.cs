@@ -15,11 +15,9 @@ public class CameraTorchAnimationController : MonoBehaviour
     {
         PlayerCamera.transform.SetPositionAndRotation(MainCamera.transform.position, MainCamera.transform.rotation);
 
-        CinemachineSmoothPath smoothPath = Track.GetComponent<CinemachineSmoothPath>();
-
-
-
+      ///  CinemachineSmoothPath smoothPath = Track.GetComponent<CinemachineSmoothPath>();
 
     }
+
 
 }
