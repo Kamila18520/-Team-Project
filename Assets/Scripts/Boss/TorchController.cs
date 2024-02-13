@@ -47,9 +47,15 @@ public class TorchController : MonoBehaviour
             Light.SetActive(true);
             FireEffect.SetActive(true);
             AnimationDirector.SetActive(true);
-            Chain.isKinematic = false;
+            Invoke("ChainRB", 3.5f);
         }
 
+
+    }
+
+    private void ChainRB()
+    {
+        Chain.isKinematic = false;
 
     }
 

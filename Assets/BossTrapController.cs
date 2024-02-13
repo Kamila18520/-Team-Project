@@ -28,24 +28,23 @@ public class BossTrapController : MonoBehaviour
 
     IEnumerator MoveTrapDown(GameObject Trap)
     {
-        float startY = transform.position.y;
-        float targetY = startY - 1.0f;
-        float duration = 1.0f;
-        float elapsedTime = 0f;
+        yield return new WaitForSeconds(6f); // OpóŸnienie o 2 sekundy
 
-        while (elapsedTime < duration)
+        Vector3 startPosition = Trap.transform.position;
+        Vector3 targetPosition = new Vector3(startPosition.x, startPosition.y -1, startPosition.z);
+
+        float elapsed = 0f;
+        float duration = .2f;
+
+        while (elapsed < duration)
         {
-            float newY = Mathf.Lerp(startY, targetY, elapsedTime / duration);
-
-            // Przesuñ obiekt w dó³
-            Trap.transform.position = new Vector3(transform.position.x, newY, transform.position.z);
-
-            elapsedTime += Time.deltaTime;
+            Trap.transform.position = Vector3.Lerp(startPosition, targetPosition, elapsed / duration);
+            elapsed += Time.deltaTime;
             yield return null;
         }
 
-        // Zapewnij, ¿e obiekt znajduje siê dok³adnie na docelowej pozycji
-        Trap.transform.position = new Vector3(transform.position.x, targetY, transform.position.z);
+        // Upewnij siê, ¿e obiekt jest dok³adnie na docelowej pozycji po zakoñczeniu przesuwania.
+        Trap.transform.position = targetPosition;
     }
 
 
