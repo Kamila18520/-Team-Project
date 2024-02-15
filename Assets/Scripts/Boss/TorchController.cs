@@ -12,6 +12,10 @@ public class TorchController : MonoBehaviour
     public int CheckpointNumber;
 
 
+    [Header("Boss")]
+    public BossController BossController;
+
+
     [Header("Torch")]
 
     [SerializeField] BossTrapController TrapController;
@@ -49,6 +53,7 @@ public class TorchController : MonoBehaviour
         if (isPlayerInZone && !isFireOn && Keyboard.current.eKey.wasReleasedThisFrame) 
         {
             Debug.Log("Player pressed E key");
+            BossController.StopBattleMode();
             CheckpointsController.SetCheckpoint(CheckpointNumber);
             TrapController.FinishLevel();
             isFireOn = true;
@@ -56,6 +61,7 @@ public class TorchController : MonoBehaviour
             FireEffect.SetActive(true);
             AnimationDirector.SetActive(true);
             Invoke("ChainRB", 3.5f);
+            
         }
 
 
@@ -64,6 +70,15 @@ public class TorchController : MonoBehaviour
     private void ChainRB()
     {
         Chain.isKinematic = false;
+        StartCoroutine(BattleMode());
+
+    }
+
+    IEnumerator BattleMode()
+    {
+        yield return new WaitForSecondsRealtime(6f);
+        BossController.StartBattleMode();
+
 
     }
 

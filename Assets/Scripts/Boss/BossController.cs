@@ -39,6 +39,8 @@ public class BossController : MonoBehaviour
     public void StartBattleMode()
     {
         inBattleMode = true;
+        Debug.Log("Ballte mode enabled");
+
         StartCoroutine(RepeatAction());
 
     }
@@ -48,6 +50,7 @@ public class BossController : MonoBehaviour
         inBattleMode = false;
         Attack.SetActive(false);
         StopAllCoroutines();
+        Debug.Log("Ballte mode disabled");
     }
 
 
@@ -71,13 +74,18 @@ public class BossController : MonoBehaviour
 
     private void PrepareForAttack()
     {
-        Debug.Log("BOSS: Prepare for Attack");
+        if(!Attack.activeSelf)
+        {
+            Debug.Log("BOSS: Prepare for Attack");
+            Attack.SetActive(true);
+        }
 
-        Attack.SetActive(true);
     }
 
     private void MainAttack()
     {
+        Attack.SetActive(true);
+
         Debug.Log("BOSS: Main Attack");
         AttactTarget.SetActive(true);
         AttactTarget.transform.position = player.position;

@@ -11,10 +11,11 @@ public class BossAttackDamager : MonoBehaviour
 
     [Header("Boss Attack damage")]
 
-    public int Life = 1;
+    public int Life = 3;
 
     [SerializeField] Transform AttackTarget;
     [SerializeField] GameObject panelImage;
+    [SerializeField] GameObject DeadPanel;
 
     [SerializeField] float distance;
 
@@ -23,7 +24,8 @@ public class BossAttackDamager : MonoBehaviour
 
     private void Start()
     {
-        capsuleCollider=GetComponent<CapsuleCollider>();
+        DeadPanel.SetActive(false);
+        capsuleCollider =GetComponent<CapsuleCollider>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -43,6 +45,7 @@ public class BossAttackDamager : MonoBehaviour
     {
         if(Life <= 0) 
         {
+          //  DeadPanel.SetActive(true);
             CheckpointsController.SetPlayerCheckpointPosition(CheckpointsController.CurrentCheckpoint);
             Debug.Log("Gracz umar³");
         

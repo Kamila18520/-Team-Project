@@ -46,6 +46,7 @@ public class CheckpointsController : MonoBehaviour
     public void SetPlayerCheckpointPosition(int point)
     {
         Player.transform.position = Checkpoints[point].transform.position;
+        Player.transform.GetChild(0).position = Checkpoints[point].transform.position;
         Debug.Log("Ustawiono gracza na pozycje checkpointa");
 
     }
