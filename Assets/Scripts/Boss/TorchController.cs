@@ -7,6 +7,13 @@ using UnityEngine.UIElements;
 
 public class TorchController : MonoBehaviour
 {
+    [Header("Checkpoint")]
+    public CheckpointsController CheckpointsController;
+    public int CheckpointNumber;
+
+
+    [Header("Torch")]
+
     [SerializeField] BossTrapController TrapController;
     [SerializeField] GameObject AnimationDirector;
     public bool isPlayerInZone;
@@ -42,6 +49,7 @@ public class TorchController : MonoBehaviour
         if (isPlayerInZone && !isFireOn && Keyboard.current.eKey.wasReleasedThisFrame) 
         {
             Debug.Log("Player pressed E key");
+            CheckpointsController.SetCheckpoint(CheckpointNumber);
             TrapController.FinishLevel();
             isFireOn = true;
             Light.SetActive(true);

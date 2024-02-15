@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class BossAttackController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public bool BattleMode = true;
+    [SerializeField] bool isAttacking;
+    [SerializeField] float AttackDuration;
     void Start()
     {
         

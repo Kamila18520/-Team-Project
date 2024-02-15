@@ -19,6 +19,7 @@ public class BossController : MonoBehaviour
 
     private void Start()
     {
+        Attack.SetActive(true);
         AttactTarget.SetActive(false);
         StartCoroutine(RepeatAction());
     }
