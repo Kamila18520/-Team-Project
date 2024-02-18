@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PortalBossController : MonoBehaviour
+public class LevelsGateController : MonoBehaviour
 {
     [Header("NumerSceny")]
-    [SerializeField] string withLevel= "[Wpisz nazwê poziomu]";
+    [SerializeField] string withLevel = "[Wpisz nazwê poziomu]";
     [SerializeField] int SceneNumber = 0;
 
     private bool Enter = true;
@@ -14,12 +14,11 @@ public class PortalBossController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player") && Enter)
+        if (other.CompareTag("Player") && Enter)
         {
-            
-            Debug.Log("Zaladowano scene: [" + withLevel+ "] numer: " + SceneNumber);
+
+            Debug.Log("Zaladowano scene: [" + withLevel + "] numer: " + SceneNumber);
             SceneManager.LoadScene(SceneNumber);
         }
     }
-
 }
