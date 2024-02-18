@@ -72,27 +72,29 @@ namespace LowPolyWater
         /// </summary>
         void GenerateWaves()
         {
-            for (int i = 0; i < vertices.Length; i++)
-            {
-                Vector3 v = vertices[i];
+            // Klonuj oryginalne wierzchołki
+            Vector3[] modifiedVertices = mesh.vertices.Clone() as Vector3[];
 
-                //Initially set the wave height to 0
+            for (int i = 0; i < modifiedVertices.Length; i++)
+            {
+                Vector3 v = modifiedVertices[i];
+
+                // Ustaw początkową wysokość fali na 0
                 v.y = 0.0f;
 
-                //Get the distance between wave origin position and the current vertex
+                // Oblicz odległość między położeniem początkowym fali a bieżącym wierzchołkiem
                 float distance = Vector3.Distance(v, waveOriginPosition);
                 distance = (distance % waveLength) / waveLength;
 
-                //Oscilate the wave height via sine to create a wave effect
-                v.y = waveHeight * Mathf.Sin(Time.time * Mathf.PI * 2.0f * waveFrequency
-                + (Mathf.PI * 2.0f * distance));
-                
-                //Update the vertex
-                vertices[i] = v;
+                // Oscyluj wysokość fali za pomocą funkcji sinus, aby stworzyć efekt fali
+                v.y = waveHeight * Mathf.Sin(Time.time * Mathf.PI * 2.0f * waveFrequency + (Mathf.PI * 2.0f * distance));
+
+                // Aktualizuj wierzchołek
+                modifiedVertices[i] = v;
             }
 
-            //Update the mesh properties
-            mesh.vertices = vertices;
+            // Aktualizuj modyfikowane wierzchołki w meshu
+            mesh.vertices = modifiedVertices;
             mesh.RecalculateNormals();
             mesh.MarkDynamic();
             meshFilter.mesh = mesh;

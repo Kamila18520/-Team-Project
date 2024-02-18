@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 
 public class BossTrapController : MonoBehaviour
 {
@@ -10,6 +12,13 @@ public class BossTrapController : MonoBehaviour
     [Header("Boss Trap")]
     [SerializeField] GameObject[] BossTrap;
 
+    [Header("Boss")]
+    public BossController BossController;
+
+    [Header("EndGameAnimation")]
+    public GameObject EndTimeline;
+
+    private bool end = false;
     public void FinishLevel()
     {
         levelsFinished++;
@@ -22,7 +31,7 @@ public class BossTrapController : MonoBehaviour
         
         if (levelsFinished==3)
         {
-            FinishBossLevel();
+            Invoke("FinishBossLevel",9.5f);
         }
     }
 
@@ -48,8 +57,29 @@ public class BossTrapController : MonoBehaviour
     }
 
 
-    private void FinishBossLevel()
+    public void FinishBossLevel()
     {
+        BossController.isFinishEntireLevel = true;
+        BossController.StopBattleMode();
+        EndTimeline.SetActive(true);
         Debug.Log("Boss Level Finished");
+        float time = (float)EndTimeline.GetComponent<PlayableDirector>().duration;
+        Invoke("LobbyLevel", time);
+    }
+    private void LobbyLevel()
+    {
+        Debug.Log("Zakoñczona Gra. Gracz przeniesiony do lobby");
+        end = true;
+
+    }
+
+    private void Update()
+    {
+        if(end)
+        {
+            SceneManager.LoadScene(0);
+            Time.timeScale = 0f;
+
+        }
     }
 }

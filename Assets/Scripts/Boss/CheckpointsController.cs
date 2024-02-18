@@ -7,6 +7,7 @@ public class CheckpointsController : MonoBehaviour
     public GameObject Player;
     public GameObject[] Checkpoints;
     public int CurrentCheckpoint;
+    [SerializeField] GameObject MainCamera;
 
 
     private void Start()
@@ -47,6 +48,14 @@ public class CheckpointsController : MonoBehaviour
     {
         Player.transform.position = Checkpoints[point].transform.position;
         Player.transform.GetChild(0).position = Checkpoints[point].transform.position;
+        MainCamera.transform.position = Vector3.zero;
+        MainCamera.transform.rotation = Quaternion.Euler(0, 0, 0);
+        do
+        {
+            MainCamera.transform.rotation = Quaternion.Euler(0, 0, 0);
+
+        }
+        while (MainCamera.transform.rotation != Quaternion.Euler(0, 0, 0));
         Debug.Log("Ustawiono gracza na pozycje checkpointa");
 
     }

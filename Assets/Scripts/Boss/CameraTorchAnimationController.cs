@@ -13,7 +13,7 @@ public class CameraTorchAnimationController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerCamera.transform.SetPositionAndRotation(MainCamera.transform.position, MainCamera.transform.rotation);
+        PlayerCamera.transform.SetPositionAndRotation(MainCamera.transform.position, Quaternion.Euler(0, 0, 0));
 
       ///  CinemachineSmoothPath smoothPath = Track.GetComponent<CinemachineSmoothPath>();
 

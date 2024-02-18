@@ -14,6 +14,7 @@ public class BossController : MonoBehaviour
     [SerializeField] GameObject Attack;
     public bool inBattleMode = true;
     public bool isAttacking = false;
+    public bool isFinishEntireLevel=false;
     [SerializeField] float AttackDutarion;
 
 
@@ -38,10 +39,15 @@ public class BossController : MonoBehaviour
 
     public void StartBattleMode()
     {
+        if(!isFinishEntireLevel)
+        {
+
         inBattleMode = true;
         Debug.Log("Ballte mode enabled");
-
         StartCoroutine(RepeatAction());
+
+        }
+
 
     }
 
