@@ -451,6 +451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5500882616319141739}
   - component: {fileID: 3151221734003421991}
+  - component: {fileID: 5914779481826015064}
   m_Layer: 0
   m_Name: Level Manager
   m_TagString: Untagged
@@ -486,9 +487,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc950bcc039e3e488a1abd1367ff869, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLevel: 0
   levelName: 2) Lvl 1
   levelNumber: 1
+  gameManager: {fileID: 0}
   Gate: {fileID: 0}
+--- !u!65 &5914779481826015064
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5741203233430138491}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 9.7800865, y: 10.212944, z: 19.32397}
+  m_Center: {x: -0.27663854, y: 4.606452, z: -0.6391468}
 --- !u!1 &8390451321547187969
 GameObject:
   m_ObjectHideFlags: 0

@@ -78,7 +78,6 @@ public class BossTrapController : MonoBehaviour
         if(end)
         {
             SceneManager.LoadScene(0);
-            Time.timeScale = 0f;
 
         }
     }

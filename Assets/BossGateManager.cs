@@ -16,30 +16,16 @@ public class BossGateManager : MonoBehaviour
 
     private void Start()
     {
-        Gate.SetActive(false);
-        for(int i=0; i <=2; i++) 
-        {
-            Crystals[i].SetActive(false);
-        
-        }
+      //  Gate.SetActive(false);
+
     }
 
 
-    public void FinishLvl()
-    {
-        Crystals[FinishedLvls].SetActive(true);
-        FinishedLvls++;
 
-        if(FinishedLvls==3) 
-        {
-
-            OpenGate();
-        
-        }
-    }
 
     public void OpenGate()
     {
+        Debug.Log("Otworzono portal do bossa");
         Gate.SetActive(true);
     }
 }

@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] BossGateManager BossGateManager;
+    [SerializeField] private int PlayerLevelPrefs;
     [SerializeField] GameObject PlayerLobby;
 
     [Header("START")]
+    public bool TEST;
     public bool START = true;
     [SerializeField] GameObject StartTimeLine;
 
     [Header("Level 1")]
     public bool LEVEL1 = false;
     [SerializeField] Transform SpawnPointAfter1Lvl;
+    [SerializeField] GameObject Dimond1;
+    [SerializeField] GameObject Gate1;
 
 
 
@@ -20,6 +25,8 @@ public class GameManager : MonoBehaviour
     [Header("Level 2")]
     public bool LEVEL2 = false;
     [SerializeField] Transform SpawnPointAfter2Lvl;
+    [SerializeField] GameObject Dimond2;
+    [SerializeField] GameObject Gate2;
 
 
 
@@ -27,52 +34,89 @@ public class GameManager : MonoBehaviour
     [Header("Level 3")]
     public bool LEVEL3 = false;
     [SerializeField] Transform SpawnPointAfter3Lvl;
+    [SerializeField] GameObject Dimond3;
+    [SerializeField] GameObject Gate3;
 
 
+    
 
-    private static GameManager instance;
+    //private static GameManager instance;
 
     void Start()
     {
 
-        // SprawdŸ, czy istnieje ju¿ instancja GameManager
-        if (instance != null)
+        
+        Debug.Log("START LOBBY");
+        PlayerLevelPrefs = PlayerPrefs.GetInt("LEVEL");
+       
+        int LEVEL = PlayerPrefs.GetInt("LEVEL");
+        if (LEVEL != 0) 
         {
-            // Zniszcz tê instancjê, poniewa¿ ju¿ istnieje GameManager
-            Destroy(gameObject);
-            return;
-        }
-
-        // Ustaw aktualn¹ instancjê jako instancjê GameManager
-        instance = this;
-
-        if (START)
-        {
-            StartTimeLine.SetActive(true);
             START = false;
+            Debug.Log("Lobby entry");
+              EntryLevel(LEVEL);
+
         }
 
-        DontDestroyOnLoad(gameObject);
+
+        if (TEST) 
+        {
+            PlayerPrefs.SetInt("LEVEL", 0);
+
+            if (START)
+            {
+             START = false;
+
+            }
+
+        }
+        else if(!TEST)
+        {
+
+           if (START)
+           {
+                PlayerPrefs.SetInt("LEVEL", 0);
+                StartTimeLine.SetActive(true);
+                START = false;
+
+           }
+        }
+
+       
+
+
+
+
+
+        
     }
 
 
     public void EntryLevel(int level)
     {
+        Debug.Log("Entry "+level);
+        PlayerPrefs.SetInt("LEVEL", level);
+
         switch (level)
         {
             case 1:
+                
                 LEVEL1 = true;
-
+                Debug.Log("Ustawiono level: " + LEVEL1);
+                TeleportToLobby(level);
                 break;
 
             case 2:
                 LEVEL2 = true;
+                Debug.Log("Ustawiono level: " + LEVEL2);
+                TeleportToLobby(level);
                 break;
 
             case 3:
                 LEVEL3 = true;
+                Debug.Log("Ustawiono level: " + LEVEL3);
+                TeleportToLobby(level);
                 break;
-
 
             default:
                 // Domyœlny przypadek, jeœli ¿aden z powy¿szych przypadków nie pasuje
@@ -87,15 +131,32 @@ public class GameManager : MonoBehaviour
         {
             case 1:
                 PlayerLobby.transform.position = SpawnPointAfter1Lvl.position;
+                 Dimond1.SetActive(true);
 
+                Gate1.SetActive(true);
+                Gate2.SetActive(false);
+                Gate3.SetActive(true);
                 break;
 
             case 2:
                 PlayerLobby.transform.position = SpawnPointAfter2Lvl.position;
+                Dimond1.SetActive(true);
+                Dimond2.SetActive(true);
+                Gate2.SetActive(true);
+                Gate3.SetActive(false);
+                Gate1.SetActive(true);
+
                 break;
 
             case 3:
                 PlayerLobby.transform.position = SpawnPointAfter3Lvl.position;
+                Dimond1.SetActive(true);
+                Dimond2.SetActive(true);
+                Dimond3.SetActive(true);
+                Gate3.SetActive(true);
+                Gate2.SetActive(true);
+                Gate1.SetActive(true);
+                BossGateManager.OpenGate();
                 break;
 
 

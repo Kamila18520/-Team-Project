@@ -8,8 +8,11 @@ public class LevelManager : MonoBehaviour
     public bool isLevel;
     [SerializeField] string levelName;
     [SerializeField] int levelNumber;
+    [SerializeField] GameManager gameManager;
 
     public GameObject Gate;
+
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -17,7 +20,10 @@ public class LevelManager : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && !isLevel)
         {
             Debug.Log("Gracz wszedl do levelu " + levelName);
+            gameManager.EntryLevel(levelNumber);
+
             SceneManager.LoadScene(levelNumber);
+            //Invoke("ToLevel", 0.1f);
 
         }
         else if(other.gameObject.CompareTag("Player") && isLevel)
@@ -25,6 +31,12 @@ public class LevelManager : MonoBehaviour
             Debug.Log("Gracz wróci³ do lobby " + levelName);
             SceneManager.LoadScene(0);
         }
+    }
+
+    private void ToLevel()
+    {
+        SceneManager.LoadScene(levelNumber);
+
     }
 
 
