@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject PlayerLobby;
 
     [Header("First Entry")]
-
+    [SerializeField] GameObject Ellen;
+    [SerializeField] GameObject Title;
     private static bool FirstEntry = true;
     public bool FirstEntryRead;
     [SerializeField] GameObject MenuCanvas;
@@ -59,10 +60,13 @@ public class GameManager : MonoBehaviour
     {
         if (!FirstEntry)
         {
+            Title.SetActive(false);
             OnEnterClick();
         }
         else if(FirstEntry)
         {
+            Ellen.SetActive(false);
+            Title.SetActive(true);
             Camera.SetActive(true);
             MenuCanvas.SetActive(true);
         }
@@ -73,6 +77,7 @@ public class GameManager : MonoBehaviour
         if (FirstEntry && Input.GetKeyDown(KeyCode.Return))
         {
             Debug.Log("Enter wciœniêty. Gra siê rozpoczê³a");
+            Ellen.SetActive(true);
             MenuCanvas.SetActive(false);
             Camera.SetActive(false);
             OnEnterClick();
