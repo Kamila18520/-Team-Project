@@ -22338,17 +22338,17 @@ PrefabInstance:
     - target: {fileID: 6000942400982209753, guid: 9feeb228ab04d1a479bbed0cd716c9f6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 73.97
+      value: 11.39
       objectReference: {fileID: 0}
     - target: {fileID: 6000942400982209753, guid: 9feeb228ab04d1a479bbed0cd716c9f6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.67
+      value: 2.52
       objectReference: {fileID: 0}
     - target: {fileID: 6000942400982209753, guid: 9feeb228ab04d1a479bbed0cd716c9f6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 25.74
+      value: -35.72
       objectReference: {fileID: 0}
     - target: {fileID: 6120361434989743246, guid: 9feeb228ab04d1a479bbed0cd716c9f6,
         type: 3}
@@ -22356,10 +22356,98 @@ PrefabInstance:
       value: GateLvlPack
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 897210378050659951, guid: 9feeb228ab04d1a479bbed0cd716c9f6, type: 3}
+    - {fileID: 4951815924522465238, guid: 9feeb228ab04d1a479bbed0cd716c9f6, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6983131307654571469, guid: 9feeb228ab04d1a479bbed0cd716c9f6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 862268624}
+    - targetCorrespondingSourceObject: {fileID: 6983131307654571469, guid: 9feeb228ab04d1a479bbed0cd716c9f6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 862268623}
+    - targetCorrespondingSourceObject: {fileID: 6983131307654571469, guid: 9feeb228ab04d1a479bbed0cd716c9f6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 862268622}
   m_SourcePrefab: {fileID: 100100000, guid: 9feeb228ab04d1a479bbed0cd716c9f6, type: 3}
+--- !u!1 &862268621 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6983131307654571469, guid: 9feeb228ab04d1a479bbed0cd716c9f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 862268620}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &862268622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862268621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 232ea8bd76f86594b88d6a7055327c16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portalBossController: {fileID: 862268625}
+--- !u!65 &862268623
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862268621}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!64 &862268624
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862268621}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
+--- !u!114 &862268625 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3948025478728218808, guid: 9feeb228ab04d1a479bbed0cd716c9f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 862268620}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 427af1d1e47341142b5444a701f78dbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &864656633 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000011275134666, guid: a6dbabfd6d3c8cb47b7243b0b8723af2,

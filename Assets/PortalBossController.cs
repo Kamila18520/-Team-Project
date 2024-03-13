@@ -1,41 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PortalBossController : MonoBehaviour
 {
-    [SerializeField] bool BossGate = false;
-    [Header("NumerSceny")]
-    [SerializeField] string withLevel= "[Wpisz nazwê poziomu]";
-    private int SceneNumber = 0;
+    [SerializeField] bool bossGate = false;
+    [SerializeField] string withLevel = "[Wpisz nazwê poziomu]";
+    [SerializeField] int levelNumber;
+    [SerializeField] int sceneNumber = 0;
+    private bool isActive = false; // Pocz¹tkowo skrypt jest wy³¹czony
 
-    [Header("Numer levelu 1/2/3/4")]
-    [SerializeField] int LevelNumber;
-
-    private bool Enter = true;
-
-
-
+    void Start()
+    {
+        // Wy³¹cz skrypt po za³adowaniu mapy
+        StopScript();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player") && Enter)
+        if (other.CompareTag("Player") && isActive)
         {
-            
-            Debug.Log("Zaladowano scene: [" + withLevel+ "] numer: " + SceneNumber);
-            //GameManager.TeleportToLobby(LevelNumber);
-            if(!BossGate)
-            {
-            SceneManager.LoadScene(SceneNumber);
-            }
-            else if(BossGate) 
-            {
-                SceneManager.LoadScene(LevelNumber);
-            
-            }
+            Debug.Log("Za³adowano scenê: [" + withLevel + "] numer: " + sceneNumber);
 
+            if (!bossGate)
+            {
+                SceneManager.LoadScene(sceneNumber);
+            }
+            else
+            {
+                SceneManager.LoadScene(levelNumber);
+            }
         }
     }
 
+    public void StartScript()
+    {
+        // W³¹czanie skryptu
+        isActive = true;
+    }
+
+    public void StopScript()
+    {
+        // Zatrzymywanie skryptu
+        isActive = false;
+    }
 }

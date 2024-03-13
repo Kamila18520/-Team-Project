@@ -1618,12 +1618,12 @@ MonoBehaviour:
   START: 1
   StartTimeLine: {fileID: 1976334099}
   LEVEL1: 0
-  SpawnPointAfter1Lvl: {fileID: 72418428}
-  Dimond1: {fileID: 1047260530}
+  SpawnPointAfter1Lvl: {fileID: 449158531}
+  Dimond1: {fileID: 1817234703}
   Gate1: {fileID: 625474282}
   LEVEL2: 0
-  SpawnPointAfter2Lvl: {fileID: 449158531}
-  Dimond2: {fileID: 1817234703}
+  SpawnPointAfter2Lvl: {fileID: 72418428}
+  Dimond2: {fileID: 1047260530}
   Gate2: {fileID: 203437725}
   LEVEL3: 0
   SpawnPointAfter3Lvl: {fileID: 1777609820}
@@ -23060,7 +23060,7 @@ PrefabInstance:
     - target: {fileID: 3151221734003421991, guid: dfc376d3c7fbe5047a02a8c721b59d6a,
         type: 3}
       propertyPath: levelNumber
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3164407315630763767, guid: dfc376d3c7fbe5047a02a8c721b59d6a,
         type: 3}
@@ -38657,7 +38657,7 @@ PrefabInstance:
     - target: {fileID: 3151221734003421991, guid: dfc376d3c7fbe5047a02a8c721b59d6a,
         type: 3}
       propertyPath: levelNumber
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4263771831048750015, guid: dfc376d3c7fbe5047a02a8c721b59d6a,
         type: 3}

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667555, g: 0.48427176, b: 0.5645241, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5697,17 +5697,17 @@ PrefabInstance:
     - target: {fileID: 1193892407022474783, guid: c34fafb567e4a154fba769b6ccaf4cbf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.22881
+      value: -24.95
       objectReference: {fileID: 0}
     - target: {fileID: 1193892407022474783, guid: c34fafb567e4a154fba769b6ccaf4cbf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.3990746
+      value: -5.42
       objectReference: {fileID: 0}
     - target: {fileID: 1193892407022474783, guid: c34fafb567e4a154fba769b6ccaf4cbf,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -18.15778
+      value: -18.39
       objectReference: {fileID: 0}
     - target: {fileID: 1193892407022474783, guid: c34fafb567e4a154fba769b6ccaf4cbf,
         type: 3}
@@ -8427,7 +8427,7 @@ PrefabInstance:
     - target: {fileID: 8838640322803207815, guid: 933d8fccb8603a244b571e282d379c25,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 29
+      value: 39.3
       objectReference: {fileID: 0}
     - target: {fileID: 8838640322803207815, guid: 933d8fccb8603a244b571e282d379c25,
         type: 3}
@@ -11265,7 +11265,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.295
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -11314,13 +11314,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1489063436}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 10.6, y: -4.6, z: -26.8}
+  m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
+  m_LocalPosition: {x: 33, y: 36.8, z: 11.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: -90, z: 0}
 --- !u!1001 &1489191426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21725,7 +21725,7 @@ GameObject:
   - component: {fileID: 2374328673641818977}
   m_Layer: 0
   m_Name: PurpCrystal04 (1)
-  m_TagString: Untagged
+  m_TagString: Crystal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21977,9 +21977,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 427af1d1e47341142b5444a701f78dbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BossGate: 0
-  withLevel: Lobby
-  LevelNumber: 1
+  bossGate: 0
+  withLevel: 
+  levelNumber: 0
+  sceneNumber: 0
 --- !u!65 &4142256346782015043
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27122,7 +27123,7 @@ GameObject:
   - component: {fileID: 4951815923152570135}
   m_Layer: 0
   m_Name: DarkBlue Glow
-  m_TagString: Untagged
+  m_TagString: Crystal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27258,7 +27259,7 @@ Transform:
   m_GameObject: {fileID: 6983131308506650992}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.55, y: 2.4, z: -79.91}
+  m_LocalPosition: {x: 47.09, y: 2.4, z: -44.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -27486,7 +27487,7 @@ GameObject:
   - component: {fileID: 6372874609316586778}
   m_Layer: 0
   m_Name: PurpCrystal03 (1)
-  m_TagString: Untagged
+  m_TagString: Crystal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27520,7 +27521,7 @@ GameObject:
   - component: {fileID: 6406819746692073934}
   m_Layer: 0
   m_Name: PurpCrystal08
-  m_TagString: Untagged
+  m_TagString: Crystal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27697,7 +27698,7 @@ GameObject:
   - component: {fileID: 6565873617622928833}
   m_Layer: 0
   m_Name: PurpCrystal03
-  m_TagString: Untagged
+  m_TagString: Crystal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27820,9 +27821,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6000942400238102628}
   - component: {fileID: 7555309884486885545}
+  - component: {fileID: 7555309884486885548}
+  - component: {fileID: 7555309884486885547}
+  - component: {fileID: 7555309884486885549}
   m_Layer: 0
   m_Name: Crystal
-  m_TagString: Untagged
+  m_TagString: Crystal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28005,6 +28009,62 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &7555309884486885547
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6983131308506650992}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!64 &7555309884486885548
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6983131308506650992}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
+--- !u!114 &7555309884486885549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6983131308506650992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 232ea8bd76f86594b88d6a7055327c16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portalBossController: {fileID: 3948025477323752453}
 --- !u!64 &8477062448833803032
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28199,7 +28259,7 @@ GameObject:
   - component: {fileID: 8959673973366372208}
   m_Layer: 0
   m_Name: PurpCrystal04
-  m_TagString: Untagged
+  m_TagString: Crystal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
