@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 526608135}
-  m_IndirectSpecularColor: {r: 0.38534588, g: 0.46327657, b: 0.56251353, a: 1}
+  m_IndirectSpecularColor: {r: 0.38534588, g: 0.4632765, b: 0.5625133, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1618,12 +1618,12 @@ MonoBehaviour:
   START: 1
   StartTimeLine: {fileID: 1976334099}
   LEVEL1: 0
-  SpawnPointAfter1Lvl: {fileID: 449158531}
-  Dimond1: {fileID: 1817234703}
+  SpawnPointAfter1Lvl: {fileID: 72418428}
+  Dimond1: {fileID: 1047260530}
   Gate1: {fileID: 625474282}
   LEVEL2: 0
-  SpawnPointAfter2Lvl: {fileID: 72418428}
-  Dimond2: {fileID: 1047260530}
+  SpawnPointAfter2Lvl: {fileID: 449158531}
+  Dimond2: {fileID: 1817234703}
   Gate2: {fileID: 203437725}
   LEVEL3: 0
   SpawnPointAfter3Lvl: {fileID: 1777609820}
@@ -23060,7 +23060,7 @@ PrefabInstance:
     - target: {fileID: 3151221734003421991, guid: dfc376d3c7fbe5047a02a8c721b59d6a,
         type: 3}
       propertyPath: levelNumber
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3164407315630763767, guid: dfc376d3c7fbe5047a02a8c721b59d6a,
         type: 3}
@@ -24568,7 +24568,7 @@ PrefabInstance:
     - target: {fileID: 1528437789154798502, guid: dfc376d3c7fbe5047a02a8c721b59d6a,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1814128335148678445, guid: dfc376d3c7fbe5047a02a8c721b59d6a,
         type: 3}
@@ -24663,7 +24663,7 @@ PrefabInstance:
     - target: {fileID: 2825489000715026319, guid: dfc376d3c7fbe5047a02a8c721b59d6a,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3151221734003421991, guid: dfc376d3c7fbe5047a02a8c721b59d6a,
         type: 3}
@@ -24838,7 +24838,7 @@ PrefabInstance:
     - target: {fileID: 5617800494834330122, guid: dfc376d3c7fbe5047a02a8c721b59d6a,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5853823115723190700, guid: dfc376d3c7fbe5047a02a8c721b59d6a,
         type: 3}
@@ -38646,9 +38646,19 @@ PrefabInstance:
       objectReference: {fileID: 118221712}
     - target: {fileID: 3151221734003421991, guid: dfc376d3c7fbe5047a02a8c721b59d6a,
         type: 3}
+      propertyPath: levelName
+      value: 2) Lvl 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3151221734003421991, guid: dfc376d3c7fbe5047a02a8c721b59d6a,
+        type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 118221713}
+    - target: {fileID: 3151221734003421991, guid: dfc376d3c7fbe5047a02a8c721b59d6a,
+        type: 3}
+      propertyPath: levelNumber
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4263771831048750015, guid: dfc376d3c7fbe5047a02a8c721b59d6a,
         type: 3}
       propertyPath: m_LocalScale.x
