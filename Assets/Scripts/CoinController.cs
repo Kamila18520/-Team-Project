@@ -1,31 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class CoinCollection : MonoBehaviour
+public class CoinController : MonoBehaviour
 {
-    private int Coin = 0;
+    public static event Action<int> CoinCollectedEvent; // Delegat i zdarzenie do przekazywania informacji o zebranych monetach
+    public int collectedCoins = 0;
 
- 
-
-
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Coin"))
+        if (other.CompareTag("Coin"))
         {
-        Coin++;
-        
-        Debug.Log(Coin);
-        Destroy(other.gameObject);
+            collectedCoins++;
+            Debug.Log("Collected coins: " + collectedCoins);
+            Destroy(other.gameObject);
 
+            // Wywo³ujemy zdarzenie, gdy gracz zbiera monetê, przekazuj¹c iloœæ zebranych monet
+            CoinCollectedEvent?.Invoke(collectedCoins);
         }
-
     }
-
-
-
 }
-
-
-
-
